@@ -119,3 +119,30 @@
     flex-wrap: wrap;
     gap: 80px;
 }
+
+.modalContainer {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(37, 36, 36, 0.807);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContainer section {
+    background-color: #F3C997;
+    display: flex;
+    padding: 30px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    gap: 15px;
+}
+
+.areaBtnModal {
+    margin-top: 20px;
+    display: flex;
+    gap: 40px;
+}

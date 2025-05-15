@@ -71,15 +71,24 @@ class VerificaPerfil(APIView):
 class CategoriaViewSet(ModelViewSet):
     queryset = Categoria.objects.all()
     serializer_class = CategoriaSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
 
 class ProdutoViewSet(ModelViewSet):
     queryset = Produto.objects.all()
     serializer_class = ProdutoSerializer
     permission_classes = [IsAuthenticated]
 
+    def get_queryset(self): 
+        return Produto.objects.filter(vendedor=self.request.user)
+
     def perform_create(self, serializer):
-        serializer.save(user=self.request.user)
+        serializer.save(vendedor=self.request.user)
+
+class ProdutosViewSet(ModelViewSet):
+    queryset = Produto.objects.all()
+    serializer_class = ProdutoSerializer
+    permission_classes = [IsAuthenticated]
+
 
 class VendaViewSet(ModelViewSet):
     queryset = Venda.objects.all()

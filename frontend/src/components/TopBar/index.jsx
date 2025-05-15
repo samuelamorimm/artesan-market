@@ -3,7 +3,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import styles from './Top.module.css'
 import { verificarStatus } from "../../services/profile";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function TopBar(){
   const navigate = useNavigate()
@@ -20,9 +20,11 @@ export default function TopBar(){
       </div>
 
       <div className={styles.areaBtns}>
-        <button >
-          <FaShoppingCart className={styles.iconBar}/>
-        </button>
+        <Link to='/carrinho'>
+          <button >
+            <FaShoppingCart className={styles.iconBar}/>
+          </button>
+        </Link>
         <button onClick={() => verificarStatus(navigate)}>
           <FaUser className={styles.iconBar}/>
         </button>

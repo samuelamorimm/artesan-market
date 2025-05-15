@@ -47,13 +47,13 @@ body {
   gap: 5px;
 }
 
-.input-area input {
+.input-area input, .input-area select {
   padding: 8px 10px;
   border-radius: 8px;
   border: 1px solid #3F332A;
 }
 
-.input-area input:focus {
+.input-area input:focus, .input-area select:focus {
   outline: none;
   color: #3F332A;
   box-shadow: 0px 0px 1px 3px #3f332a48;

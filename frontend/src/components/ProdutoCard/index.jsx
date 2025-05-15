@@ -1,14 +1,15 @@
 import styles from './ProdutoCard.module.css'
 import ImgProduto from '../../assets/produto.png'
 import { FaShoppingCart } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
-export default function Produto() {
+export default function Produto({nome, imagem, preco}) {
     return(
         <div className={styles.produtoCard}>
-            <img src={ImgProduto} alt="produto" />
+            <img src={imagem} alt="produto" />
 
             <div className={styles.areaPreco}>
-                <h2>R$ 25,00</h2>
+                <h2>R$ {preco.toFixed(2).replace('.', ',')}</h2>
 
                 <button>
                     <FaShoppingCart/>
@@ -16,7 +17,7 @@ export default function Produto() {
             </div>
 
             <div className={styles.areaInfo}>
-              <h2>Nome produto</h2>
+              <h2>{nome}</h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.s</p>
             </div>
         </div>
