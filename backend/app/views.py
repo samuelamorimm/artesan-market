@@ -95,6 +95,11 @@ class VendaViewSet(ModelViewSet):
     serializer_class = VendaSerializer
     permission_classes = [IsAuthenticated]
 
+    def perform_create(self, serializer):
+        serializer.save(comprador=self.request.user)
+
+
+
 class ItemVendaViewSet(ModelViewSet):
     queryset = ItemVenda.objects.all()
     serializer_class = ItemVendaSerializer

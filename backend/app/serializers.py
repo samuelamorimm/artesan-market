@@ -43,7 +43,7 @@ class ProdutoSerializer(serializers.ModelSerializer):
 class VendaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Venda
-        fields = '__all__'
+        fields = ['id','vendedor', 'total']
 
 class ItemVendaSerializer(serializers.ModelSerializer):
     class Meta:

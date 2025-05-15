@@ -44,7 +44,7 @@ export default function Home() {
         <section className={styles.areaProdutos}>
 
           {produtos.map((item) =>
-            <Produto key={item.id} nome={item.nome} imagem={item.imagem} preco={item.preco} />
+            <Produto key={item.id} id={item.id} nome={item.nome} imagem={item.imagem} preco={item.preco} />
           )}
 
         </section>

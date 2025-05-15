@@ -17,7 +17,7 @@ export default function Rotas(){
         <Route path="/register" element={<PageCadastro/>}/>
         <Route path="/perfil" element={<Perfil/>}/>
         <Route path="/inicio" element={<Home/>}/>
-        <Route path="/detalhes" element={<Detalhes/>}/>
+        <Route path="/produto/:id" element={<Detalhes/>}/>
         <Route path="/painel" element={<Painel/>}/>
         <Route path="/carrinho" element={<Carrinho/>}/>
       </Routes>
