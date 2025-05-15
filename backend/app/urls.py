@@ -6,7 +6,7 @@ from .views import PerfilViewSet, CategoriaViewSet, ProdutoViewSet, VendaViewSet
 
 router = DefaultRouter()
 router.register(r'perfil', PerfilViewSet, basename='perfil') #cria e busca perfil pelo usuário logado
-router.register(r'categorias', CategoriaViewSet, basename='categoria') #cria categoria com base no usuário logado
+router.register(r'categorias', CategoriaViewSet, basename='categoria')
 router.register(r'produtos', ProdutoViewSet, basename='produto') #cria produto com base no usuário logado, get e etc.. normal
 router.register(r'vendas', VendaViewSet, basename='venda')
 router.register(r'itens-venda', ItemVendaViewSet, basename='itens')

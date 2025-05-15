@@ -1,45 +1,46 @@
-import './index.css'
+import styles from './Inicio.module.css'
+
 import Inicial from '../../assets/inicial.png'
 import { Link } from 'react-router-dom'
 
 export default function Inicio() {
     return (
-        <>
-            <nav>
-                <div id='logo-area'>
+        <div className={styles.container}>
+            <nav className={styles.nav}>
+                <div className={styles.logoArea}>
 
                 </div>
 
-                <div id='link-area'>
-                    <a href="" className="link">Início</a>
-                    <a href="" className="link">Sobre</a>
-                    <a href="" className="link">Contato</a>
-                    <a href="" className="link">Duvidas</a>
+                <div className={styles.linkArea}>
+                    <a href="" className={styles.link}>Início</a>
+                    <a href="" className={styles.link}>Sobre</a>
+                    <a href="" className={styles.link}>Contato</a>
+                    <a href="" className={styles.link}>Duvidas</a>
                 </div>
 
 
-                <div id='btn-area'>
+                <div className={styles.btnArea}>
                     <Link to='/login'>
-                        <button className="btn-login">Entrar</button>
+                        <button className={styles.btnLogin}>Entrar</button>
                     </Link>
                     <Link to='/register'>
-                        <button className="btn-login">Cadastrar</button>
+                        <button className={styles.btnLogin}>Cadastrar</button>
                     </Link>
                 </div>
             </nav>
 
-            <main>
-                <section id='section-img'>
-                    <img src={Inicial} alt="Homem fabricando jarro" />
+            <main className={styles.main}>
+                <section className={styles.sectionImg}>
+                    <img src={Inicial} className={styles.img} alt="Homem fabricando jarro" />
                 </section>
-                <section id='section-txt'>
-                    <h1 id='titulo'>Artisan Market</h1>
-                    <p id='sobre'>Oferecemos ao usuário a melhor experiência de compra e venda. E um marketplace totalmente focado no artesanato, tanto para você vendedor quanto ao consumidor. Experimente!
+                <section className={styles.sectionTxt}>
+                    <h1 className={styles.titulo}>Artisan Market</h1>
+                    <p className={styles.sobre}>Oferecemos ao usuário a melhor experiência de compra e venda. E um marketplace totalmente focado no artesanato, tanto para você vendedor quanto ao consumidor. Experimente!
                     </p>
 
-                    <button id='btn-start'>Começar</button>
+                    <button className={styles.btnStart}>Começar</button>
                 </section>
             </main>
-        </>
+        </div>
     )
 }

@@ -61,9 +61,6 @@ class CategoriaViewSet(ModelViewSet):
     serializer_class = CategoriaSerializer
     permission_classes = [IsAuthenticated]
 
-    def perform_create(self, serializer):
-        serializer.save(user=self.request.user)
-
 class ProdutoViewSet(ModelViewSet):
     queryset = Produto.objects.all()
     serializer_class = ProdutoSerializer

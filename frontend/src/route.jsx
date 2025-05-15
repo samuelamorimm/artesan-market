@@ -4,6 +4,7 @@ import PageCadastro from "./pages/Cadastro";
 import PageLogin from "./pages/Login";
 import Perfil from "./pages/Perfil";
 import Home from "./pages/Home";
+import Detalhes from "./pages/Detalhes";
 
 export default function Rotas(){
   return(
@@ -14,6 +15,7 @@ export default function Rotas(){
         <Route path="/register" element={<PageCadastro/>}/>
         <Route path="/perfil" element={<Perfil/>}/>
         <Route path="/inicio" element={<Home/>}/>
+        <Route path="/detalhes" element={<Detalhes/>}/>
       </Routes>
     </BrowserRouter>
   )

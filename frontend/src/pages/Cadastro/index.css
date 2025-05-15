@@ -7,7 +7,7 @@
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
 }
 
-body {
+.container {
     width: 100vw;
     min-height: 100vh;
     background-color: #FBE6CC;
