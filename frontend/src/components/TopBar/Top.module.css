@@ -36,6 +36,10 @@
     border: none;
 }
 
+.areaBusca form {
+    width: 100%;
+}
+
 .areaBusca input:focus {
     outline: none;
     color: #3F332A;

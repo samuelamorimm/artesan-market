@@ -89,6 +89,16 @@ class ProdutosViewSet(ModelViewSet):
     serializer_class = ProdutoSerializer
     permission_classes = [IsAuthenticated]
 
+class BuscaProduto(ModelViewSet):
+    queryset = Produto.objects.all()
+    serializer_class = ProdutoSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        nome = self.request.query_params.get('name')
+        if nome:
+            return Produto.objects.filter(nome__icontains=nome)
+
 
 class VendaViewSet(ModelViewSet):
     queryset = Venda.objects.all()

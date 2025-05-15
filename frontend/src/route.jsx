@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Detalhes from "./pages/Detalhes";
 import Painel from "./pages/Painel";
 import Carrinho from "./pages/Carrinho";
+import Busca from "./pages/PageBusca";
 
 export default function Rotas(){
   return(
@@ -20,6 +21,7 @@ export default function Rotas(){
         <Route path="/produto/:id" element={<Detalhes/>}/>
         <Route path="/painel" element={<Painel/>}/>
         <Route path="/carrinho" element={<Carrinho/>}/>
+        <Route path="/buscar/:result" element={<Busca/>}/>
       </Routes>
     </BrowserRouter>
   )

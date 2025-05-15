@@ -2,13 +2,14 @@
 from django.contrib import admin
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
-from .views import PerfilViewSet, CategoriaViewSet, ProdutoViewSet, VendaViewSet, ItemVendaViewSet, CustomObtainAuthToken, RegisterView, PagamentoViewSet, VerificaPerfil, ProdutosViewSet
+from .views import PerfilViewSet, CategoriaViewSet, ProdutoViewSet, VendaViewSet, ItemVendaViewSet, CustomObtainAuthToken, RegisterView, PagamentoViewSet, VerificaPerfil, ProdutosViewSet, BuscaProduto
 
 router = DefaultRouter()
 router.register(r'perfil', PerfilViewSet, basename='perfil') #cria e busca perfil pelo usuário logado
 router.register(r'categorias', CategoriaViewSet, basename='categoria')
 router.register(r'produtos', ProdutoViewSet, basename='produto') #cria produto com base no usuário logado, get e etc.. normal
-router.register(r'produtos-geral', ProdutosViewSet, basename='produtos-geral') #so para pegar todos os produtos
+router.register(r'produtos-geral', ProdutosViewSet, basename='produtos-geral')
+router.register(r'busca', BuscaProduto, basename='busca') #so para pegar todos os produtos
 router.register(r'vendas', VendaViewSet, basename='venda')
 router.register(r'itens-venda', ItemVendaViewSet, basename='itens')
 router.register(r'pagamentos', PagamentoViewSet, basename='pagamento')

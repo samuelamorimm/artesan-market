@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+.container {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #FBE6CC;
+    display: flex;
+    flex-direction: column;
+}
+
+.areaCategorias {
+    display: flex;
+    padding: 30px;
+    gap: 30px;
+}
+
+.areaCategorias button {
+    width: 200px;
+    padding: 10px;
+    background-color: #F3C997;
+    color: #3F332A;
+    border: none;
+    border-radius: 90px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+
+}
+
+.areaCategorias button:hover {
+    background-color: #6e5e52;
+    color: #F3C997;
+    transition-duration: 0.3s;
+}
+
+.main {
+    padding: 30px;
+    padding-bottom: 30px;
+    width: 99%;
+}
+
+.main h1 {
+    font-size: 40px;
+    color: #3F332A;
+    margin-bottom: 25px;
+}
+
+.areaProdutos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 80px;
+}
