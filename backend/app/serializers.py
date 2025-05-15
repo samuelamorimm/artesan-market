@@ -28,7 +28,7 @@ class RegisterUserSerializer(serializers.ModelSerializer):
 class PerfilSerializer(serializers.ModelSerializer):
     class Meta:
         model = Perfil
-        fields = '__all__'
+        fields = ['cpf', 'nome', 'cidade', 'data_nascimento', 'status']
 
 class CategoriaSerializer(serializers.ModelSerializer):
     class Meta:

@@ -7,9 +7,7 @@ import { registerProfile } from '../../services/auth';
 export default function Perfil() {
 
   const btn = document.querySelectorAll('.btn-classe')
-  function removerFundoBtn() {
-
-  }
+  
 
   function setarClasse(classe) {
     setClasse(classe)

@@ -53,7 +53,7 @@ class PerfilViewSet(ModelViewSet):
     def get_queryset(self): #busca o perfil já filtrando pelo usuário logado
         return Perfil.objects.filter(user=self.request.user)
 
-    def perform_create(self, serializer): #cria o perfil já passando como user o usuário logado
+    def perform_create(self, serializer):
         serializer.save(user=self.request.user)
 
 class CategoriaViewSet(ModelViewSet):
