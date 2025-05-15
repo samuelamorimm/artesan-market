@@ -1,15 +1,37 @@
 import api from "./api";
 
-export async function loginUser(username, password) {
+
+
+export async function loginUser(username, password, navigate) {
     try {
         const response = await api.post('login/', {
             username: username,
             password: password,
         })
-        const token = response.data.token
+        let token = response.data.token
         localStorage.setItem('userToken', token)
         console.log(response.status, response.data)
         console.log('Sucesso')
+
+        try { //verificar se usuário tem um perfil
+            const response = await api.get('verificar-perfil/', {
+                headers: {
+                    Authorization: `Token ${token}`
+                }
+            })
+            const perfil = response.data.perfil_existente
+            console.log(perfil)
+            if(perfil) {
+                navigate('/inicio')
+            } else {
+
+                navigate('/perfil')
+            }
+        } catch (error) {
+            console.log('Erro ao verificar perfil!')
+        }
+
+        
     } catch (error) {
         console.log('Usuário ou senha incorretos!')
     }

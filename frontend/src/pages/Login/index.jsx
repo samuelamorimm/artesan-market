@@ -1,9 +1,11 @@
 import './index.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useRef, useState, useEffect } from 'react'
 import { loginUser } from '../../services/auth'
 
+
 export default function PageLogin() {
+    const navigate = useNavigate()
 
     const inputEmail = useRef()
     const inputSenha = useRef()
@@ -27,7 +29,7 @@ export default function PageLogin() {
             </form>
 
             <div className="area-btns">
-                <button className="btn" onClick={() => loginUser(inputEmail.current.value, inputSenha.current.value)}>Entrar</button>
+                <button className="btn" onClick={() => loginUser(inputEmail.current.value, inputSenha.current.value, navigate)}>Entrar</button>
                 <p>Não tem uma conta?</p>
                 <Link to='/register'>
                     <button className="btn">Cadastrar</button>

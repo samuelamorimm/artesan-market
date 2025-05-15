@@ -56,6 +56,18 @@ class PerfilViewSet(ModelViewSet):
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
 
+class VerificaPerfil(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        perfil_existe = Perfil.objects.filter(user=request.user).exists()
+        return Response({
+            "perfil_existente":perfil_existe
+        })
+
+
+
+
 class CategoriaViewSet(ModelViewSet):
     queryset = Categoria.objects.all()
     serializer_class = CategoriaSerializer

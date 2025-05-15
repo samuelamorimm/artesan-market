@@ -2,7 +2,7 @@
 from django.contrib import admin
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
-from .views import PerfilViewSet, CategoriaViewSet, ProdutoViewSet, VendaViewSet, ItemVendaViewSet, CustomObtainAuthToken, RegisterView, PagamentoViewSet
+from .views import PerfilViewSet, CategoriaViewSet, ProdutoViewSet, VendaViewSet, ItemVendaViewSet, CustomObtainAuthToken, RegisterView, PagamentoViewSet, VerificaPerfil
 
 router = DefaultRouter()
 router.register(r'perfil', PerfilViewSet, basename='perfil') #cria e busca perfil pelo usuário logado
@@ -16,4 +16,5 @@ urlpatterns = [
     path('', include(router.urls)),
     path('login/', CustomObtainAuthToken.as_view(), name='login'),
     path('register/', RegisterView.as_view(), name='register'),
+    path('verificar-perfil/', VerificaPerfil.as_view())
 ]
