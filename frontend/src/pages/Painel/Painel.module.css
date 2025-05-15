@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+.container {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #FBE6CC;
+    display: flex;
+    flex-direction: column;
+}
+
+.areaTopo {
+    padding: 30px;
+    display: flex;
+    gap: 70px;
+}
+
+.areaInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+}
+
+.areaPerfil {
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
+    background-color: #ccc;
+    margin-top: 50px;
+    margin-bottom: 15px;
+}
+
+.areaInfo h1 {
+    font-size: 40px;
+    color: #3F332A;
+}
+
+.areaInfo h2 {
+    font-size: 30px;
+    color: #3F332A;
+    font-weight: 500;
+}
+
+.areaHistorico {
+    
+    height: 400px;
+}
+
+.areaHistorico h1 {
+    font-size: 40px;
+    color: #3F332A;
+    margin-bottom: 20px;
+}
+
+.areaVenda {
+    border: 1px solid purple;
+    display: flex;
+    padding: 8px 20px;
+    width: 900px;
+    justify-content: space-between;
+    background-color: #F3C997;
+    border: 2px solid #3F332A;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.areaVendaScroll {
+    overflow-y: scroll;
+    height: 320px;
+    padding: 20px 0;
+}
+
+.areaVenda  h2{
+    font-weight: 400;
+}
+
+
+.areaProdutos {
+    padding: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-bottom: 60px;
+}
+
+.areaTitulo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.areaTitulo h1 {
+    font-size: 40px;
+    color: #3F332A;
+}
+
+.areaTitulo button {
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    color: #fff;
+    background-color: #3F332A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+}
+
+.containerProdutos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 80px;
+}

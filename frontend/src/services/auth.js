@@ -11,7 +11,7 @@ export async function loginUser(username, password, navigate) {
         let token = response.data.token
         localStorage.setItem('userToken', token)
         console.log(response.status, response.data)
-        console.log('Sucesso')
+        console.log('Sucesso!')
 
         try { //verificar se usuário tem um perfil
             const response = await api.get('verificar-perfil/', {
@@ -37,7 +37,7 @@ export async function loginUser(username, password, navigate) {
     }
 }
 
-export async function RegisterUser(username, password, confirm) {
+export async function RegisterUser(username, password, confirm, navigate) {
     if (!username || !password || !confirm) {
         alert('Insira seus dados corretamente!')
         return;
@@ -52,14 +52,15 @@ export async function RegisterUser(username, password, confirm) {
             password: password,
         })
         console.log(response.status, response.data)
-        console.log('Sucesso ao cadastrar usuário.')
+        alert('Sucesso ao cadastrar usuário.')
+        navigate('/login')
     } catch (error) {
         console.log(error)
-        console.log('Erro ao cadastrar usuário.')
+        alert('Erro ao cadastrar usuário.')
     }
 }
 
-export async function registerProfile(name, cpf, city, dateN, classe) {
+export async function registerProfile(name, cpf, city, dateN, classe, navigate) {
     console.log(
         name, '\n',
         cpf, '\n',
@@ -88,9 +89,10 @@ export async function registerProfile(name, cpf, city, dateN, classe) {
             }
         })
         console.log(response.data)
-        console.log('Sucesso ao cadastrar perfil!, Seja bem vindo!')
+        alert('Sucesso ao cadastrar perfil!, Seja bem vindo!')
+        navigate('/inicio')
     } catch (error) {
         console.log(error)
-        console.log('Erro ao cadastrar perfil, tente novamente!')
+        alert('Erro ao cadastrar perfil, tente novamente!')
     }
 } 

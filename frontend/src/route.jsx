@@ -5,6 +5,7 @@ import PageLogin from "./pages/Login";
 import Perfil from "./pages/Perfil";
 import Home from "./pages/Home";
 import Detalhes from "./pages/Detalhes";
+import Painel from "./pages/Painel";
 
 export default function Rotas(){
   return(
@@ -16,6 +17,7 @@ export default function Rotas(){
         <Route path="/perfil" element={<Perfil/>}/>
         <Route path="/inicio" element={<Home/>}/>
         <Route path="/detalhes" element={<Detalhes/>}/>
+        <Route path="/painel" element={<Painel/>}/>
       </Routes>
     </BrowserRouter>
   )

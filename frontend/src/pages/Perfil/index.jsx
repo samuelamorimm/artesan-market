@@ -1,5 +1,5 @@
 import './index.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { useRef, useState } from 'react';
 import { registerProfile } from '../../services/auth';
@@ -14,6 +14,7 @@ export default function Perfil() {
   }
 
   const [classe, setClasse] = useState('')
+  const navigate= useNavigate()
 
   const inputNome = useRef()
   const inputCpf = useRef()
@@ -58,7 +59,7 @@ export default function Perfil() {
       <div className="area-btns">
         
           <button className="btn"
-           onClick={() => registerProfile(inputNome.current?.value, inputCpf.current?.value, inputCidade.current?.value, inputDataNasc.current?.value, classe)}
+           onClick={() => registerProfile(inputNome.current?.value, inputCpf.current?.value, inputCidade.current?.value, inputDataNasc.current?.value, classe, navigate)}
           >Avançar</button>
       
       </div>

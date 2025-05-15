@@ -2,8 +2,12 @@ import { CiSearch } from "react-icons/ci";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import styles from './Top.module.css'
+import { verificarStatus } from "../../services/profile";
+import { useNavigate } from "react-router-dom";
 
 export default function TopBar(){
+  const navigate = useNavigate()
+
   return(
     <header className={styles.container}>
       <div className={styles.areaLogo}>
@@ -16,10 +20,10 @@ export default function TopBar(){
       </div>
 
       <div className={styles.areaBtns}>
-        <button>
+        <button >
           <FaShoppingCart className={styles.iconBar}/>
         </button>
-        <button>
+        <button onClick={() => verificarStatus(navigate)}>
           <FaUser className={styles.iconBar}/>
         </button>
       </div>

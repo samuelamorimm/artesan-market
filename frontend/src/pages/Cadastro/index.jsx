@@ -1,13 +1,16 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useRef, useState } from "react";
 import './index.css'
 import { RegisterUser } from "../../services/auth";
 
 export default function PageCadastro() {
 
+    const navigate = useNavigate()
+
     const inputEmail = useRef()
     const inputSenha = useRef()
     const inputConfirmar = useRef()
+    
 
     return (
         <>
@@ -35,7 +38,7 @@ export default function PageCadastro() {
 
             <div className="area-btns">
                 <button className="btn"
-                    onClick={() => RegisterUser(inputEmail.current?.value, inputSenha.current?.value, inputConfirmar.current?.value)}
+                    onClick={() => RegisterUser(inputEmail.current?.value, inputSenha.current?.value, inputConfirmar.current?.value, navigate)}
                 >
                     Cadastrar
                 </button>
