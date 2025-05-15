@@ -48,7 +48,7 @@ body {
 }
 
 .input-area input {
-  padding: 8px 0;
+  padding: 8px 10px;
   border-radius: 8px;
   border: 1px solid #3F332A;
 }
@@ -92,8 +92,11 @@ body {
   cursor: pointer;
 }
 
+
+
 .area-btns button:hover {
   background-color: #3f332a9b;
   transition-duration: 0.3s;
   border: 1px solid gray;
 }
+

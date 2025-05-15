@@ -1,7 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import Inicio from './pages/Inicio/index.jsx'
+import Inicio from './pages/Inicio'
+import Rotas from './route'
 
 createRoot(document.getElementById('root')).render(
-    <Inicio></Inicio>
+    <StrictMode>
+        <Rotas></Rotas>
+    </StrictMode>
 )

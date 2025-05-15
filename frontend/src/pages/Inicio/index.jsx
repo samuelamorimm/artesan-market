@@ -1,5 +1,6 @@
 import './index.css'
 import Inicial from '../../assets/inicial.png'
+import { Link } from 'react-router-dom'
 
 export default function Inicio() {
     return (
@@ -16,13 +17,14 @@ export default function Inicio() {
                     <a href="" className="link">Duvidas</a>
                 </div>
 
+
                 <div id='btn-area'>
-                    <button className="btn-login">
-                        Entrar
-                    </button>
-                    <button className="btn-login">
-                        Cadastrar
-                    </button>
+                    <Link to='/login'>
+                        <button className="btn-login">Entrar</button>
+                    </Link>
+                    <Link to='/register'>
+                        <button className="btn-login">Cadastrar</button>
+                    </Link>
                 </div>
             </nav>
 

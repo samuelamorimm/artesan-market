@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #FBE6CC;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+#area-titulo {
+  margin-bottom: 40px;
+}
+
+#area-titulo h1 {
+  text-align: center;
+  font-size: 50px;
+  color: #3F332A;
+  font-weight: bold;
+}
+
+#area-titulo p {
+  font-size: 20px;
+  color: #3F332A;
+}
+
+#form-login {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-area {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  gap: 5px;
+}
+
+.input-area input {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #3F332A;
+}
+
+.input-area input:focus {
+  outline: none;
+  color: #3F332A;
+  box-shadow: 0px 0px 1px 3px #3f332a48;
+  transition-duration: 0.3s;
+}
+
+.input-area label {
+  font-size: 20px;
+  color: #3F332A;
+  font-weight: 500;
+}
+
+.area-btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.area-btns {
+  font-size: 20px;
+  font-weight: 500;
+  color: #3F332A;
+  margin-top: 10px;
+}
+
+.area-btns button {
+  background-color: #3F332A;
+  font-size: 30px;
+  font-weight: 500;
+  color: #fff;
+  width: 300px;
+  padding: 5px 0px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.area-btns button:hover {
+  background-color: #3f332a9b;
+  transition-duration: 0.3s;
+  border: 1px solid gray;
+}
+
+.container-classes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.container-classes label {
+  font-size: 20px;
+  color: #3F332A;
+  font-weight: 500;
+}
+
+#area-classes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+
+
+.btn-classe {
+  border: 2px solid #3F332A;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 8px 50px;
+  background-color: transparent;
+  color: #3F332A;
+  border-radius: 8px;
+  cursor: pointer;
+  cursor: pointer;
+}
+
+.btn-classe:hover {
+  background-color: #3f332a9b;
+  transition-duration: 0.3s;
+  border: 1px solid gray;
+}
+
+.btn-sel {
+  color: #fff;
+  background-color: #3F332A;
+}
