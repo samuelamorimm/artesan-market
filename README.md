@@ -24,3 +24,8 @@
 - Django Auth Token
 - Permissões por usuário
 
+# Rode localmente:
+
+ 1. Clone o projeto
+    git clone 
+
