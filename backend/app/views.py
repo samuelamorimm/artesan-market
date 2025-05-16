@@ -98,6 +98,20 @@ class BuscaProduto(ModelViewSet):
         nome = self.request.query_params.get('name')
         if nome:
             return Produto.objects.filter(nome__icontains=nome)
+        
+class BuscaIdVendedor(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        nome = self.request.query_params.get('nome')
+        if nome:
+            produto = Produto.objects.filter(nome=nome).first()
+            if produto:
+                vendedor = produto.vendedor
+                return Response({
+                    'id': vendedor.id,
+                })
+        
 
 
 class VendaViewSet(ModelViewSet):

@@ -18,7 +18,7 @@ export default function Detalhes() {
         }
 
         try {
-            const response = await api.get(`/produtos/${id}/`, {
+            const response = await api.get(`/produtos-geral/${id}/`, {
                 headers: {
                     Authorization: `Token ${token}`
                 }
@@ -30,9 +30,38 @@ export default function Detalhes() {
         }
     }
 
+    async function buscarVendedor() {
+
+        const token = localStorage.getItem('userToken')
+        if (!token) {
+            console.log('Token não encontrado.')
+            return;
+        }
+
+        try {
+            const response = await api.get(`/buscar-vendedor/?nome=${produto?.nome}`, {
+                headers: {
+                    Authorization: `Token ${token}`
+                }
+            });
+            console.log('id:', response.data)
+        } catch (error) {
+            console.error('Erro ao buscar vendedor', error);
+        }
+    }
+
+
+
     useEffect(() => {
         buscarProduto()
     }, [])
+
+    useEffect(() => {
+        if (produto?.nome) {
+            buscarVendedor()
+        }
+    }, [produto])
+
 
     return (
         <div className={styles.container}>
