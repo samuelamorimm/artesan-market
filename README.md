@@ -34,9 +34,9 @@
 
 2. Acesse o backend:
 
-  ```js
+   ```js
     cd backend
-  ```
+   ```
 
 3. Start o ambiente e instale as dependências:
 
@@ -51,6 +51,14 @@
     ```js
       python manage.py migrate
       python manage.py runserver 0.0.0.0:8000
+    ```
+       
+5. Acesse o frontend, instale as dependências e start o servidor:
+
+    ```js
+      cd frontend
+      npm install
+      npm run dev 
     ```
 
 
