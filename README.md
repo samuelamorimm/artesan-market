@@ -27,7 +27,31 @@
 # Rode localmente:
 
  1. Clone o projeto
+    
     ```js
     git clone https://github.com/samuelamorimm/artesan-market.git
     ```
+
+2. Acesse o backend:
+
+  ```js
+    cd backend
+  ```
+
+3. Start o ambiente e instale as dependências:
+
+   ```js
+    python -m venv venv
+    venv\Scripts\activate
+    pip install -r requirements.txt
+   ```
+   
+4. Rode as migrações e start o servidor:
+
+    ```js
+      python manage.py migrate
+      python manage.py runserver 0.0.0.0:8000
+    ```
+
+
 
