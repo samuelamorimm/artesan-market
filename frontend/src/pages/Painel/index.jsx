@@ -107,7 +107,7 @@ export default function Painel() {
                 <div className={styles.containerProdutos}>
                     
                     {produtos.map((item) =>
-                        <Produto key={item.id} nome={item.nome} imagem={item.imagem} preco={item.preco}/>
+                        <Produto key={item.id} id={item.id} nome={item.nome} imagem={item.imagem} preco={item.preco}/>
                     )}
 
 

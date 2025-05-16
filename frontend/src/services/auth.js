@@ -21,7 +21,7 @@ export async function loginUser(username, password, navigate) {
             })
             const perfil = response.data.perfil_existente
             console.log(perfil)
-            if(perfil) {
+            if (perfil) {
                 navigate('/inicio')
             } else {
 
@@ -31,7 +31,7 @@ export async function loginUser(username, password, navigate) {
             console.log('Erro ao verificar perfil!')
         }
 
-        
+
     } catch (error) {
         console.log('Usuário ou senha incorretos!')
     }
@@ -79,9 +79,9 @@ export async function registerProfile(name, cpf, city, dateN, classe, navigate) 
     try {
         const response = await api.post('perfil/', {
             cpf: cpf,
-            nome: name, 
-            cidade: city, 
-            data_nascimento: dateN, 
+            nome: name,
+            cidade: city,
+            data_nascimento: dateN,
             status: classe,
         }, {
             headers: {
@@ -95,4 +95,17 @@ export async function registerProfile(name, cpf, city, dateN, classe, navigate) 
         console.log(error)
         alert('Erro ao cadastrar perfil, tente novamente!')
     }
-} 
+}
+
+export function logout(navigate) {
+    localStorage.removeItem('userToken')
+    localStorage.removeItem('vendaId')
+    navigate('/')
+}
+
+export function verificarToken(navigate) {
+    const token = localStorage.getItem('userToken')
+    if (!token) {
+        navigate('/login')
+    }
+}

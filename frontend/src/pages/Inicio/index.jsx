@@ -38,7 +38,9 @@ export default function Inicio() {
                     <p className={styles.sobre}>Oferecemos ao usuário a melhor experiência de compra e venda. E um marketplace totalmente focado no artesanato, tanto para você vendedor quanto ao consumidor. Experimente!
                     </p>
 
-                    <button className={styles.btnStart}>Começar</button>
+                    <Link to='/register'>
+                        <button className={styles.btnStart}>Começar</button>
+                    </Link>
                 </section>
             </main>
         </div>

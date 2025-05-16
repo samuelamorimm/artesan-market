@@ -5,6 +5,9 @@ import styles from './Top.module.css'
 import { verificarStatus } from "../../services/profile";
 import { useNavigate, Link } from "react-router-dom";
 import { useRef } from "react";
+import { IoLogOut } from "react-icons/io5";
+import { logout } from "../../services/auth";
+
 
 export default function TopBar(){
   const navigate = useNavigate()
@@ -39,6 +42,9 @@ export default function TopBar(){
         </Link>
         <button onClick={() => verificarStatus(navigate)}>
           <FaUser className={styles.iconBar}/>
+        </button>
+        <button onClick={() => logout(navigate)}>
+          <IoLogOut className={styles.iconBar}/>
         </button>
       </div>
 

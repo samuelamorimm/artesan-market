@@ -26,6 +26,7 @@ export async function criarVenda(idVendedor, quantidade, idProduto) {
           Authorization: `Token ${token}`
         }
       })
+      alert('Produto adicionado ao carrinho!')
       console.log('produto criado:', response.data)
     } catch (error) {
       console.log('Erro ao criar item', error)
@@ -55,10 +56,51 @@ export async function criarVenda(idVendedor, quantidade, idProduto) {
           Authorization: `Token ${token}`
         }
       })
+      alert('Produto adicionado ao carrinho!')
     } catch (error) {
       console.log('Erro ao criar item', error)
     }
   } catch (error) { //venda
     console.log('Erro ao criar venda.', error)
+  }
+}
+
+export async function pagameto(setModal, setMsg) {
+  const vendaId = localStorage.getItem("vendaId")
+  if (!vendaId) {
+    alert('Selecione algo para poder comprar!')
+    return;
+  }
+
+  const token = localStorage.getItem('userToken')
+  if (!token) {
+    console.log('Token não encontrado.')
+    return;
+  }
+
+  setModal(true)
+
+  try {
+    const response = api.post("pagamentos/", {
+      venda: vendaId,
+      status: 'C',
+    }, {
+      headers: {
+        Authorization: `Token ${token}`
+      }
+    })
+    localStorage.removeItem('vendaId')
+    setTimeout(() => {
+      setMsg('Pagamento concluído!')
+      
+    }, 3000);
+
+    setTimeout(() => {
+      setModal(false)
+      window.location.reload()
+    }, 4300);
+
+  } catch (error) {
+    alert('Erro ao realizar pagamento')
   }
 }

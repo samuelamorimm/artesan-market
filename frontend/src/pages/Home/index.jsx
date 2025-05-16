@@ -2,15 +2,17 @@
 import TopBar from "../../components/TopBar";
 import styles from './Home.module.css'
 import Produto from "../../components/ProdutoCard";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import api from "../../services/api";
 import { useState, useEffect } from "react";
 import { pegarProdutos } from "../../services/products";
+import { verificarToken } from "../../services/auth";
 
 
 export default function Home() {
   const [categorias, setCategorias] = useState([])
   const [produtos, setProdutos] = useState([])
+  const navigate = useNavigate()
 
   async function pegarCategorias() {
     try {
@@ -25,6 +27,7 @@ export default function Home() {
   useEffect(() => {
     pegarCategorias()
     pegarProdutos(setProdutos)
+    verificarToken(navigate)
   }, [])
 
 

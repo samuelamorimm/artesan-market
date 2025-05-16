@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export default function Produto({ id, nome, imagem, preco }) {
     return (
-        <Link to={`/produto/${id}`}>
+        <Link to={`/produto/${id}`} className={styles.LinkC}>
             <div className={styles.produtoCard}>
                 <img src={imagem} alt="produto" />
 

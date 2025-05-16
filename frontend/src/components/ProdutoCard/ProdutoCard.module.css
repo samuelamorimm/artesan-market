@@ -25,6 +25,7 @@
 .areaPreco h2{
     font-size: 25px;
     color: #3F332A;
+    text-decoration: none;
 }
 
 .areaPreco button {
@@ -55,4 +56,10 @@
 .areaInfo p {
     font-size: 12px;
     font-weight: 400;
+    color: #3F332A;
+    text-decoration: none;
+}
+
+.LinkC {
+    text-decoration: none;
 }
