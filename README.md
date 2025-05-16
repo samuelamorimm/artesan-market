@@ -27,5 +27,7 @@
 # Rode localmente:
 
  1. Clone o projeto
-    git clone 
+    ```js
+    git clone https://github.com/samuelamorimm/artesan-market.git
+    ```
 
