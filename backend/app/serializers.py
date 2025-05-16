@@ -47,9 +47,14 @@ class VendaSerializer(serializers.ModelSerializer):
         fields = ['id','vendedor', 'total']
 
 class ItemVendaSerializer(serializers.ModelSerializer):
+    produto_nome = serializers.CharField(source='produto.nome', read_only=True)
+    produto_preco = serializers.CharField(source='produto.preco', read_only=True)
+
     class Meta:
         model = ItemVenda
         fields = '__all__'
+
+    
 
 class PagamentoSerializer(serializers.ModelSerializer):
     class Meta:

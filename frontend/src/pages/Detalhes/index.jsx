@@ -2,12 +2,16 @@ import TopBar from "../../components/TopBar"
 import styles from './Detalhes.module.css'
 import ImgProduto from '../../assets/produto.png'
 import { useParams } from 'react-router-dom';
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import api from "../../services/api";
+import { criarVenda } from "../../services/venda";
 
 export default function Detalhes() {
     const { id } = useParams()
     const [produto, setProduto] = useState([])
+    const [idVendedor, setIdVendedor] = useState(null)
+
+    const quantidade = useRef()
 
     async function buscarProduto() {
 
@@ -44,7 +48,8 @@ export default function Detalhes() {
                     Authorization: `Token ${token}`
                 }
             });
-            console.log('id:', response.data)
+            console.log('id:', response.data.id)
+            setIdVendedor(response.data.id)
         } catch (error) {
             console.error('Erro ao buscar vendedor', error);
         }
@@ -78,13 +83,14 @@ export default function Detalhes() {
                         <h1>R$ {produto.preco ? produto.preco.toFixed(2).replace('.', ',') : '00,00'}</h1>
                     </div>
                     <div className={styles.areaBtn}>
-                        <button>
+                        <button onClick={() => criarVenda(idVendedor, quantidade.current?.value, produto.id)}>
                             Adicionar
                         </button>
 
                         <input
                             type="number"
                             name="quantidade"
+                            ref={quantidade}
                         />
                     </div>
                 </div>

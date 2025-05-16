@@ -129,6 +129,12 @@ class ItemVendaViewSet(ModelViewSet):
     serializer_class = ItemVendaSerializer
     permission_classes = [IsAuthenticated]
 
+    def get_queryset(self):
+        id_venda = self.request.query_params.get('id')
+        if id_venda: 
+            return ItemVenda.objects.filter(venda__id=int(id_venda))
+        return ItemVenda.objects.all()
+
 class PagamentoViewSet(ModelViewSet):
     queryset = Pagamento.objects.all()
     serializer_class = PagamentoSerializer
